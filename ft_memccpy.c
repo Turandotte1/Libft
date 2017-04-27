@@ -9,25 +9,34 @@
 /*   Updated: 2017/04/24 12:27:11 by mrychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <string.h>
+//#include <stdio.h>
+//#include <string.h>
+//#include <stdlib.h>
 
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
 	unsigned char	*cdest;
 	unsigned char	*csrc;
-	size_t			i;
-
+	
 	cdest = (unsigned char *)dest;
 	csrc = (unsigned char *)src;
-	i = 0;
-	if (dest = src || n == 0)
+	if (n == 0 || dest == src)
 		return (dest);
-	while (i < n)
+	while (n--)
 	{
-		cdest[i++] = csrc[i++];
-		if (cdest[i] == c)
-			return (cdest + i + 1);
+		*cdest++ = *csrc++;
+		if (*csrc == c)
+			return (cdest + 1);
 	}
 	return (NULL);
 }
+/*
+int	main(void)
+{
+	char *src = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char dest[80];
+	printf("%p\n", ft_memccpy(dest, src, 'F', strlen(src)));
+	printf("%p\n", memccpy(dest, src, 'F', strlen(src)));
+	return (0);
+}
+*/

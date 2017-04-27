@@ -15,7 +15,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 INC = libft.h
 SRC = *.c;
-OBJ = $(SRC:.c=.o)
+OBJ = $(SRC:%.c=%.o)
 
 NO_COLOR = \033[0m
 WAIT_COLOR = \033[1;33m
@@ -25,12 +25,15 @@ CLEAN_COLOR = \033[1;36m
 .PHONY: all clean fclean re
 
 all: $(NAME)
-$(NAME):
-	echo "$(WAIT_COLOR)--::libft creation::--$(NO_COLOR)"
-	$(CC) $(CFLAGS) -c $(SRC) -I $(INC)
-	ar rc $(NAME) $(OBJ)
+
+$(NAME): $(OBJ)
+	echo "$(WAIT_COLOR):libft creation::--$(NO_COLOR)"
+	ar rc  $(NAME) $(OBJ)
 	ranlib $(NAME)
 	echo "$(OK_COLOR)--::libft compiled::--$(NO_COLOR)"
+
+$(OBJ): $(SRS)
+	$(CC) $(CFLAGS) -c $(SRC) -I $(INC)
 
 clean:
 	echo "$(WAIT_COLOR)--::.o deletion::--$(NO_COLOR)"

@@ -10,31 +10,29 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
+//#include <string.h>
+//#include <stdio.h>
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t i;
+	char *new;
 
-	if (len == 0)
-		return (dst);
-	if (src < dst)
+	new = ft_strnew(len);
+	if (new)
 	{
-		i = len;
-		while (i > 0)
-		{
-			i--;
-			((char *)dst)[i] = ((char *)src)[i];
-		}
-	}
-	else
-	{
-		i = 0;
-		while (i < len)
-		{
-			((char *)dst)[i] = ((char *)src)[i];
-			i++;
-		}
+		src = ft_memcpy(new, src, len);
+		dst = ft_memcpy(dst, new, len);
 	}
 	return (dst);
+
+/*
+int	main(void)
+{
+	char dest[50] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+	char *src = "thi\xffs i\xfas \0a g\xde\xadood \0nyan\0cat\0 !\r\n";
+	printf("%s\n", ft_memmove(dest, src, 26));
+	printf("%s\n", memmove(dest, src, 33));
+	return (0);
 }
+*/	

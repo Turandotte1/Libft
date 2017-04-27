@@ -12,16 +12,10 @@
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	unsigned char *cb;
+	unsigned char	*copy_b;
 
-	cb = (unsigned char *)b;
-	if (len == 0)
-		return (b);
+	copy_b = (unsigned char *)b;
 	while (len--)
-	{
-		*cb = (unsigned char)c;
-		if (len)
-			cb++;
-	}
+		*copy_b++ = (unsigned char)c;
 	return (b);
 }

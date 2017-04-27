@@ -10,18 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+//#include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+char	*ft_strdup(const char *s)
 {
-	size_t	len;
 	char	*abc;
 
-	len = ft_strlen(*s1);
-	abc = (char*)malloc(sizeof(*abc) * len + 1);
-	while (len)
-		*abc++ = *src++;
-	abc[len] = '\0';
+	if (!(abc = (char*)malloc(sizeof(char) * ft_strlen(s) + 1)))
+		return (NULL);
+	while (*s)
+		*abc++ = *s++;
+	abc = '\0';
 	return (abc);
 }
