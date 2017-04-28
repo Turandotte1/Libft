@@ -10,20 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *dest, char *src)
+char	*ft_strcat(char *s1, const char *s2)
 {
-	int a;
-	int b;
-
-	a = 0;
-	b = 0;
-	while (dest[a])
-		a++;
-	while (src[b])
-	{
-		dest[a + b] = src[b];
-		b++;
-	}
-	dest[a + b] = '\0';
-	return (dest);
+	while (*s1++)
+		;
+	while (*s2)
+		*s1++ = *s2++;	
+	*s1 = '\0';
+	return (s1);
 }

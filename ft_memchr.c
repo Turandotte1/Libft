@@ -1,20 +1,20 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mrychkov <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/24 12:31:32 by mrychkov          #+#    #+#             */
-/*   Updated: 2017/04/24 12:34:38 by mrychkov         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#include "libft.h"
+//#include <stdio.h>
+//#include <string.h>
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t len)
 {
-	unsigned char *cs;
+	const  char *cs;
 
-	cs = (unsigned char *)s;
-	while (n-- && *cs++)
-		return (*cs == c ? cs : NULL);
+	cs = (const char *)s;
+	return (len == 0 ? NULL : ft_strnchr(s, c, len));
 }
+
+/*
+int	main(void)
+{
+   printf("%s\n", ft_memchr("/|\x12\xff\x09\x42\042\42|\\", '\x42', 8));
+   printf("%s\n", memchr("/|\x12\xff\x09\x42\042\42|\\", '\x42', 8));
+   return (0);
+}
+*/

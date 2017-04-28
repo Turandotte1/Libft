@@ -1,26 +1,24 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mrychkov <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/24 12:35:08 by mrychkov          #+#    #+#             */
-/*   Updated: 2017/04/24 12:39:34 by mrychkov         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#include "libft.h"
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned char *cs1;
-	unsigned char *cs2;
+	unsigned char *cs1;;
+	unsigned char *cs2;;
 
-	cs1 = (unsigned char *)s1;
-	cs2 = (unsigned char *)s2;
-	while (n-- && *cs1 == *cs2)
-	{
-		*cs1++;
-		*cs2++;
-	}
-	return (*cs1 - *cs2);
+	cs1 = (unsigned char*)s1;
+	cs2 = (unsigned char*)s2;
+	return (ft_strncmp(s3, s4, n));
 }
+/*
+int	main(void)
+{
+	const char *s1;
+	const char *s2;
+	s1 = "\xff\0\0\xaa\0\xde\xffMACOSX\xff";
+	s2 = "\xff\0\0\xaa\0\xde\x00MBS";
+	size_t n = 9;
+i	printf("%d\n", ft_memcmp(s1, s2, n));
+	printf("%d\n", memcmp(s1, s2, n));
+	return (0);
+}
+*/
