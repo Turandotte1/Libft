@@ -6,25 +6,21 @@
 /*   By: mrychkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/17 14:51:05 by mrychkov          #+#    #+#             */
-/*   Updated: 2017/03/20 12:10:30 by mrychkov         ###   ########.fr       */
+/*   Updated: 2017/04/29 18:54:35 by mrychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncat(char *dest, char *src, int nb)
+char	*ft_strncat(char *dest, const char *src, size_t nb)
 {
 	int a;
 	int b;
 
 	a = 0;
 	b = 0;
-	while (dest[a])
-		a++;
+	while (dest[a++])
+		;
 	while (src[b] && b < nb)
-	{
-		dest[a] = src[b];
-		b++;
-		a++;
-	}
+		dest[a++] = src[b++];
 	dest[a] = '\0';
 	return (dest);
 }

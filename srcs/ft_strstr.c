@@ -1,6 +1,16 @@
-#include "libft.h"
-//#include <stdio.h>
-//#include <string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mrychkov <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/04/29 19:04:25 by mrychkov          #+#    #+#             */
+/*   Updated: 2017/04/29 19:08:16 by mrychkov         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <libft.h>
 
 char	*ft_strstr(const char *s1, const char *s2)
 {
@@ -15,7 +25,7 @@ char	*ft_strstr(const char *s1, const char *s2)
 		j = 0;
 		while (s1[k + j] == s2[j])
 		{
-			if (s2[j] =='\0')
+			if (s2[j] == '\0')
 				return ((char *)s1 + k);
 			j++;
 		}
@@ -23,11 +33,3 @@ char	*ft_strstr(const char *s1, const char *s2)
 	}
 	return (0);
 }
-/*
-int	main(void)
-{
-	printf("%s\n", ft_strstr("oh no not the empty string !", ""));
-	printf("%s\n", strstr("oh no not the empty string !", ""));
-	return (0);
-}
-*/

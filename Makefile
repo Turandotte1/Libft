@@ -6,7 +6,7 @@
 #    By: mrychkov <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/04/18 20:14:44 by mrychkov          #+#    #+#              #
-#    Updated: 2017/04/24 14:15:38 by mrychkov         ###   ########.fr        #
+#    Updated: 2017/04/29 20:50:10 by mrychkov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,31 +33,53 @@ ft_isascii.c \
 ft_isdigit.c \
 ft_isprint.c \
 ft_toupper.c \
+ft_tolower.c \
 ft_memccpy.c \
+ft_memcpy.c \
 ft_memchr.c \
 ft_memcmp.c \
 ft_memmove.c \
 ft_memset.c \
 ft_strcat.c \
 ft_strchr.c \
-ft_strcmp.c \
 ft_strcpy.c \
 ft_strdup.c \
 ft_strlcat.c \
 ft_strlen.c \
 ft_strncat.c \
-ft_strncmp.c \
 ft_strcnpy.c \
 ft_strnstr.c \
 ft_strrchr.c \
 ft_strstr.c \
-ft_tolower.c \
+# ft_strncmp.c \
+# ft_strnchr.c \
+# ft_strcmp.c \
+
 ft_memalloc.c \
 ft_putchar.c \
 ft_putchar_fd.c \
 ft_putstr.c \
 ft_putstr_fd.c \
 ft_strnew.c \
+ft_putnbr.c \
+ft_putnbr_fd.c \
+ft_putendl.c \
+ft_putendl_fd.c \
+# ft_memdel.c \
+# ft_strdel.c \
+# ft_strclr.c \
+# ft_striter.c \
+# ft_striteri.c \
+# ft_strmap.c \
+# ft_strmapi.c \
+# ft_strsub.c \
+# ft_strequ.c \
+# ft_strnequ.c \ 
+# ft_strjoin.c \
+# ft_strstrim.c \
+# ft_strsplit.c \
+# ft_itoa.c \ 
+
 ft_isspace.c \
 
 # dir
@@ -70,7 +92,6 @@ INC_DIR = ./includes
 
 SRC_PATH = $(addprefix $(SRC_DIR)/,$(SRC))
 OBJ_PATH = $(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
-INC_PATH = $(addprefix -I $(INC_DIR))
 
 # rules
 
@@ -88,7 +109,7 @@ $(NAME): $(OBJ_PATH)
 	@echo "$(OK_COLOR)	--- Libft successfully compiled! ---	$(NO_COLOR)"
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-	$(CC) $(CFLAGS) $(INC_PATH) -o $@ -c $<
+	$(CC) $(CFLAGS) -I $(INC_DIR) -o $@ -c $<
 
 norme:
 	@norminette $(SRC_PATH) includes/libft.h

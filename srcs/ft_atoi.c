@@ -1,10 +1,22 @@
-#include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mrychkov <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/04/29 17:20:20 by mrychkov          #+#    #+#             */
+/*   Updated: 2017/04/29 17:26:20 by mrychkov         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <libft.h>
 
 int		ft_atoi(const char *str)
 {
-	size_t	 i;
-	int	n;
-	int 	a;
+	size_t	i;
+	int		n;
+	int		a;
 
 	i = 0;
 	n = 1;
@@ -17,6 +29,6 @@ int		ft_atoi(const char *str)
 		i++;
 	}
 	while (ft_isdigit(str[i++]))
-		a = a * 10 + str[i] - 48;	
+		a = a * 10 + str[i] - 48;
 	return (a * n);
 }

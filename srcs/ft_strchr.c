@@ -1,14 +1,18 @@
-#include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mrychkov <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/04/29 18:42:04 by mrychkov          #+#    #+#             */
+/*   Updated: 2017/04/29 18:42:43 by mrychkov         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <libft.h>
 
 char	*ft_strchr(const char *s, int c)
 {
 	return (ft_memchr(s, c, ft_strlen(s) + 1));
 }
-/*
-int	main(void)
-{
-	printf("%s\n", ft_strchr("bonbons", '\0'));
-	printf("%s\n", strchr("bonbons", '\0'));
-	return (0);
-}
-*/

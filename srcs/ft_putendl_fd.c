@@ -1,16 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isspace.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrychkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/29 20:49:26 by mrychkov          #+#    #+#             */
-/*   Updated: 2017/04/29 20:49:53 by mrychkov         ###   ########.fr       */
+/*   Created: 2017/04/29 20:07:21 by mrychkov          #+#    #+#             */
+/*   Updated: 2017/04/29 20:09:05 by mrychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isspace(int c)
+#include <libft.h>
+
+void	ft_putendl_fd(char const *s, int fd)
 {
-	return ((c >= 9 && c <= 13) || c == 32);
+	write(fd, s, ft_strlen(s));
+	write(fd, '\n', 1);
 }
