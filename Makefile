@@ -14,7 +14,7 @@
 
 NO_COLOR = \033[0m
 WAIT_COLOR = \033[1;33m
-OK_COLOR = \03[1;32m
+OK_COLOR = \033[1;32m
 CLEAN_COLOR = \033[1;36m
 
 # compiliation
@@ -47,14 +47,13 @@ ft_strdup.c \
 ft_strlcat.c \
 ft_strlen.c \
 ft_strncat.c \
-ft_strcnpy.c \
+ft_strncpy.c \
 ft_strnstr.c \
 ft_strrchr.c \
 ft_strstr.c \
 # ft_strncmp.c \
 # ft_strnchr.c \
 # ft_strcmp.c \
-
 ft_memalloc.c \
 ft_putchar.c \
 ft_putchar_fd.c \
@@ -78,9 +77,7 @@ ft_putendl_fd.c \
 # ft_strjoin.c \
 # ft_strstrim.c \
 # ft_strsplit.c \
-# ft_itoa.c \ 
-
-ft_isspace.c \
+# ft_itoa.c \ ft_isspace.c \
 
 # dir
 
@@ -97,10 +94,7 @@ OBJ_PATH = $(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
 
 .PHONY: all, clean, fclean, re
 
-all: objects $(NAME) $(OBJ_PATH)
-
-objects:
-	@mkdir -p $(OBJ_DIR)
+all: $(NAME) $(OBJ_PATH)
 
 $(NAME): $(OBJ_PATH)
 	@echo "$(WAIT_COLOR)	--- Libft creation.... ---	$(NO_COLOR)"
@@ -109,10 +103,12 @@ $(NAME): $(OBJ_PATH)
 	@echo "$(OK_COLOR)	--- Libft successfully compiled! ---	$(NO_COLOR)"
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+	
+	@mkdir -p $(OBJ_DIR)
 	$(CC) $(CFLAGS) -I $(INC_DIR) -o $@ -c $<
 
 norme:
-	@norminette $(SRC_PATH) includes/libft.h
+	@norminette $(SRC_PATH) $(INC_DIR)
 clean:
 	@echo "$(WAIT_COLOR)	--- .o deletion.... ---		$(NO_COLOR)"
 	rm -f $(OBJ_PATH)
@@ -120,6 +116,6 @@ clean:
 
 fclean: clean
 	@echo "$(WAIT_COLOR)	--- Libft deletion.... ---	$(NO_COLOR)"
-	rm -rf $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
