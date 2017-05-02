@@ -10,10 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <libft.h>
+
 char	*ft_strncat(char *dest, const char *src, size_t nb)
 {
-	int a;
-	int b;
+	size_t a;
+	size_t b;
 
 	a = 0;
 	b = 0;

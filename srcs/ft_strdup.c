@@ -20,6 +20,6 @@ char	*ft_strdup(const char *s)
 		return (NULL);
 	while (*s)
 		*abc++ = *s++;
-	abc = '\0';
+	*abc = '\0';
 	return (abc);
 }

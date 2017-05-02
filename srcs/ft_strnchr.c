@@ -14,4 +14,5 @@
 
 char	*ft_strnchr(const char *s, int c, size_t n)
 {
+	return (ft_memchr(s, c, ft_strlen(s) + 1));
 }

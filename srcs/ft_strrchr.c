@@ -18,6 +18,6 @@ char	*ft_strrchr(const char *s, int c)
 
 	cs = (char *)s + ft_strlen(s);
 	while (*cs-- != c)
-		cs == s ? NULL : cs;
+		return (cs == s ? NULL : cs);
 	return (cs);
 }
