@@ -10,6 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <libft.h>
+
 char	*ft_strjoin(char const *s1, char const *s2)
 {
+	int		j;
+	int		k;
+	char		*ptr
+
+	j = ft_strlen(s1);
+	k = ft_strlen(s2);
+	if (!(ptr = (char *)malloc(j + k + 1)))
+		return (NULL);
+	j = -1;
+	k = -1;
+	while (s1[++j])
+		ptr[j] = ((char *)s1)[j];
+	while (s2[++k])
+		ptr[j++] = ((char *)s2)[k];
+	ptr[j] = '\0';
+	return (ptr);
 }

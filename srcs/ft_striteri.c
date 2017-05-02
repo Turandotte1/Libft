@@ -11,5 +11,10 @@
 /* ************************************************************************** */
 
 void	ft_striteri(char *s, void(*f)(unsigned int, char *))
-{
+{	
+	unsigned int a;
+
+	a = 0;
+	while (f && s  && s[a])
+		f(a, s + (++a));
 }

@@ -12,4 +12,14 @@
 
 char	*ft_strmapi(char const *s, char(*f)(unsigned int, char))
 {
+	unsigned int		i;
+	char			*cs;
+
+	i = ft_strlen(s);
+	if (!(cs = (char *)malloc(i + 1)))
+		return (NULL);
+	while (f && *s)
+		cs[i++] = f(i++, s[i++]);
+	cs[i] = '\0';
+	return (cs);
 }
