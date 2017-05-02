@@ -6,7 +6,7 @@
 #    By: mrychkov <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/04/18 20:14:44 by mrychkov          #+#    #+#              #
-#    Updated: 2017/04/29 20:50:10 by mrychkov         ###   ########.fr        #
+#    Updated: 2017/05/02 18:47:40 by mrychkov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,9 +51,9 @@ ft_strncpy.c \
 ft_strnstr.c \
 ft_strrchr.c \
 ft_strstr.c \
-# ft_strncmp.c \
-# ft_strnchr.c \
-# ft_strcmp.c \
+ft_strncmp.c \
+ft_strnchr.c \
+ft_strcmp.c \
 ft_memalloc.c \
 ft_putchar.c \
 ft_putchar_fd.c \
@@ -77,7 +77,14 @@ ft_putendl_fd.c \
 # ft_strjoin.c \
 # ft_strstrim.c \
 # ft_strsplit.c \
-# ft_itoa.c \ ft_isspace.c \
+# ft_itoa.c \
+# ft_lstnew.c \
+# ft_lstdelone.c \
+# ft_lstdel.c \
+# ft_lstadd.c \
+# ft_lstiter.c \
+# ft_lstmap.c \
+ft_isspace.c
 
 # dir
 
