@@ -10,6 +10,26 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <libft.h>
+
 char	*ft_itoa(int n)
 {
+	char		*ptr;
+	int		len;
+
+	len = ft_int_size(n);
+	ptr = ft_strnew(len);
+	len--;
+	ptr[0] = '0';
+	if (n < 0)
+		*ptr = '-';
+	while (n)
+	{
+		if (n < 0)
+			ptr[len--] = 48 - n % 10;
+		else
+			ptr[len--] = 48 + n % 10;
+		n = n / 10;
+	}
+	return (ptr);
 }

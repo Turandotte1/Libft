@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <libft.h>
+
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
 	size_t		i;
@@ -21,5 +23,5 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	while (len--)
 		ptr[i++] = s[start++];
 	ptr[i] = '\0';
-	return (tab);
+	return (ptr);
 }
