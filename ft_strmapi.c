@@ -1,41 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrychkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/29 20:44:47 by mrychkov          #+#    #+#             */
-/*   Updated: 2017/04/29 20:45:13 by mrychkov         ###   ########.fr       */
+/*   Created: 2017/04/29 20:27:19 by mrychkov          #+#    #+#             */
+/*   Updated: 2017/04/29 20:30:35 by mrychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+char	*ft_strmapi(char const *s, char(*f)(unsigned int, char))
 {
-	int		i;
-	char	 	str[11];
-	int		neg;
+	unsigned int		i;
+	char			*ptr;
 
+	if (!s && !f)
+		return (NULL);
 	i = 0;
-	ft_bzero(str, 10);
-	neg = 0;
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	if (n < 0)
+	while (s[i])
+		i++;
+	if (!(ptr = (char *)malloc(i + 1)))
+		return (NULL);
+	i = 0;
+	while (f != NULL && s[i])
 	{
-		n = -n;
-		neg = 1;
+		ptr[i] = f(i, s[i]);
+		i++;
 	}
-	while (n / 10)
-	{
-		str[i++] = n % 10 + '0';
-		n = n / 10;
-	}
-	str[i++] = n + '0';
-	if (neg == 1)
-		str[i++] = '-';
-	str[i] = '\0';
-	return (ft_strdup(ft_strrev(str)));
+	ptr[i] = '\0';
+	return (ptr);
 }

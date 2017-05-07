@@ -52,7 +52,6 @@ ft_strnstr.c \
 ft_strrchr.c \
 ft_strstr.c \
 ft_strncmp.c \
-ft_strnchr.c \
 ft_strcmp.c \
 ft_memalloc.c \
 ft_putchar.c \
@@ -64,33 +63,35 @@ ft_putnbr.c \
 ft_putnbr_fd.c \
 ft_putendl.c \
 ft_putendl_fd.c \
-# ft_memdel.c \
-# ft_strdel.c \
-# ft_strclr.c \
-# ft_striter.c \
-# ft_striteri.c \
-# ft_strmap.c \
-# ft_strmapi.c \
-# ft_strsub.c \
-# ft_strequ.c \
-# ft_strnequ.c \ 
-# ft_strjoin.c \
-# ft_strstrim.c \
-# ft_strsplit.c \
-# ft_itoa.c \
-# ft_lstnew.c \
-# ft_lstdelone.c \
-# ft_lstdel.c \
-# ft_lstadd.c \
-# ft_lstiter.c \
-# ft_lstmap.c \
-ft_isspace.c
+ft_memdel.c \
+ft_strdel.c \
+ft_strclr.c \
+ft_striter.c \
+ft_striteri.c \
+ft_strmap.c \
+ft_strmapi.c \
+ft_strsub.c \
+ft_strequ.c \
+ft_strnequ.c \
+ft_strjoin.c \
+ft_strtrim.c \
+ft_strsplit.c \
+ft_itoa.c \
+ft_lstdelone.c \
+ft_lstdel.c \
+ft_lstadd.c \
+ft_lstiter.c \
+ft_lstmap.c \
+ft_lstnew.c \
+ft_isspace.c \
+ft_int_size.c \
+ft_strrev.c
 
 # dir
 
-SRC_DIR = ./srcs
+SRC_DIR = ./
 OBJ_DIR = ./objs
-INC_DIR = ./includes
+INC_DIR = ./
 
 # paths
 
@@ -99,18 +100,16 @@ OBJ_PATH = $(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
 
 # rules
 
-.PHONY: all, clean, fclean, re
+.PHONY: all clean fclean re
 
 all: $(NAME) $(OBJ_PATH)
 
 $(NAME): $(OBJ_PATH)
-	@echo "$(WAIT_COLOR)	--- Libft creation.... ---	$(NO_COLOR)"
 	ar rc $@ $(OBJ_PATH)
 	ranlib $@
 	@echo "$(OK_COLOR)	--- Libft successfully compiled! ---	$(NO_COLOR)"
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-	
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c	
 	@mkdir -p $(OBJ_DIR)
 	$(CC) $(CFLAGS) -I $(INC_DIR) -o $@ -c $<
 
@@ -118,11 +117,10 @@ norme:
 	@norminette $(SRC_PATH) $(INC_DIR)
 clean:
 	@echo "$(WAIT_COLOR)	--- .o deletion.... ---		$(NO_COLOR)"
-	rm -f $(OBJ_PATH)
-	@rmdir $(OBJ_DIR)
-
+	rm -rf $(OBJ_DIR)
+	
 fclean: clean
 	@echo "$(WAIT_COLOR)	--- Libft deletion.... ---	$(NO_COLOR)"
-	rm -f $(NAME)
+	rm -rf $(NAME)
 
 re: fclean all

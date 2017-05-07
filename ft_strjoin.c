@@ -1,41 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrychkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/29 20:44:47 by mrychkov          #+#    #+#             */
-/*   Updated: 2017/04/29 20:45:13 by mrychkov         ###   ########.fr       */
+/*   Created: 2017/04/29 20:40:59 by mrychkov          #+#    #+#             */
+/*   Updated: 2017/04/29 20:41:35 by mrychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int		i;
-	char	 	str[11];
-	int		neg;
+	int		j;
+	int		k;
+	char		*ptr;
 
-	i = 0;
-	ft_bzero(str, 10);
-	neg = 0;
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	if (n < 0)
-	{
-		n = -n;
-		neg = 1;
-	}
-	while (n / 10)
-	{
-		str[i++] = n % 10 + '0';
-		n = n / 10;
-	}
-	str[i++] = n + '0';
-	if (neg == 1)
-		str[i++] = '-';
-	str[i] = '\0';
-	return (ft_strdup(ft_strrev(str)));
+	if (!s1 || !s2)
+		return (NULL);
+	j = ft_strlen(s1);
+	k = ft_strlen(s2);
+	if (!(ptr = (char *)malloc(sizeof(char) * (j + k + 1))))
+		return (NULL);
+	j = -1;
+	k = -1;
+	while (s1[++j])
+		ptr[j] = ((char *)s1)[j];
+	while (s2[++k])
+		ptr[j++] = ((char *)s2)[k];
+	ptr[j] = '\0';
+	return (ptr);
 }

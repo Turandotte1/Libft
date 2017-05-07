@@ -1,41 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrychkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/29 20:44:47 by mrychkov          #+#    #+#             */
-/*   Updated: 2017/04/29 20:45:13 by mrychkov         ###   ########.fr       */
+/*   Created: 2017/03/15 17:11:17 by mrychkov          #+#    #+#             */
+/*   Updated: 2017/04/29 18:58:00 by mrychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+char	*ft_strncpy(char *dest, const char *src, size_t len)
 {
-	int		i;
-	char	 	str[11];
-	int		neg;
+	size_t i;
 
 	i = 0;
-	ft_bzero(str, 10);
-	neg = 0;
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	if (n < 0)
+	while (src[i] && i < len)
 	{
-		n = -n;
-		neg = 1;
+		dest[i] = src[i];
+		i++;
 	}
-	while (n / 10)
+	while (i < len)
 	{
-		str[i++] = n % 10 + '0';
-		n = n / 10;
+		dest[i++] = '\0';
 	}
-	str[i++] = n + '0';
-	if (neg == 1)
-		str[i++] = '-';
-	str[i] = '\0';
-	return (ft_strdup(ft_strrev(str)));
+	return (dest);
 }

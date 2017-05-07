@@ -1,41 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrychkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/29 20:44:47 by mrychkov          #+#    #+#             */
-/*   Updated: 2017/04/29 20:45:13 by mrychkov         ###   ########.fr       */
+/*   Created: 2017/04/29 17:20:20 by mrychkov          #+#    #+#             */
+/*   Updated: 2017/04/29 17:26:20 by mrychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+int		ft_atoi(const char *str)
 {
-	int		i;
-	char	 	str[11];
-	int		neg;
+	size_t	i;
+	int		n;
+	int		a;
 
 	i = 0;
-	ft_bzero(str, 10);
-	neg = 0;
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	if (n < 0)
+	n = 1;
+	a = 0;
+	while (ft_isspace(str[i]))
+		i++;
+	if (str[i] == 45 || str[i] == 43)
 	{
-		n = -n;
-		neg = 1;
+		n = (str[i] == 45 ? -1 : 1);
+		i++;
 	}
-	while (n / 10)
-	{
-		str[i++] = n % 10 + '0';
-		n = n / 10;
-	}
-	str[i++] = n + '0';
-	if (neg == 1)
-		str[i++] = '-';
-	str[i] = '\0';
-	return (ft_strdup(ft_strrev(str)));
+	while (ft_isdigit(str[i]))
+		a = a * 10 + str[i++] - 48;
+	return (a * n);
 }

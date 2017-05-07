@@ -1,41 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrychkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/29 20:44:47 by mrychkov          #+#    #+#             */
-/*   Updated: 2017/04/29 20:45:13 by mrychkov         ###   ########.fr       */
+/*   Created: 2017/03/21 21:00:19 by mrychkov          #+#    #+#             */
+/*   Updated: 2017/04/29 18:47:51 by mrychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+char	*ft_strdup(const char *s)
 {
-	int		i;
-	char	 	str[11];
-	int		neg;
+	char	*abc;
+	int	i;
 
 	i = 0;
-	ft_bzero(str, 10);
-	neg = 0;
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	if (n < 0)
+	if (!(abc = (char*)malloc(sizeof(char) * (ft_strlen(s) + 1))))
+		return (NULL);
+	while (s[i])
 	{
-		n = -n;
-		neg = 1;
+		abc[i] = s[i];
+		i++;
 	}
-	while (n / 10)
-	{
-		str[i++] = n % 10 + '0';
-		n = n / 10;
-	}
-	str[i++] = n + '0';
-	if (neg == 1)
-		str[i++] = '-';
-	str[i] = '\0';
-	return (ft_strdup(ft_strrev(str)));
+	abc[i] = '\0';
+	return (abc);
 }

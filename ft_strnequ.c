@@ -1,41 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrychkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/29 20:44:47 by mrychkov          #+#    #+#             */
-/*   Updated: 2017/04/29 20:45:13 by mrychkov         ###   ########.fr       */
+/*   Created: 2017/04/29 20:39:08 by mrychkov          #+#    #+#             */
+/*   Updated: 2017/04/29 20:40:17 by mrychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+int		ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	int		i;
-	char	 	str[11];
-	int		neg;
+	size_t	i;
 
-	i = 0;
-	ft_bzero(str, 10);
-	neg = 0;
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	if (n < 0)
+	if (s1 && s2)
 	{
-		n = -n;
-		neg = 1;
+		i = 0;
+		while (s1[i] == s2[i] && i < n && s1[i] && s2[i])
+			i++;
+		if ((i == n || s1[i] == s2[i]))
+			return (1);
 	}
-	while (n / 10)
-	{
-		str[i++] = n % 10 + '0';
-		n = n / 10;
-	}
-	str[i++] = n + '0';
-	if (neg == 1)
-		str[i++] = '-';
-	str[i] = '\0';
-	return (ft_strdup(ft_strrev(str)));
+	return (0);
 }

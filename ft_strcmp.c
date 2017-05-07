@@ -1,41 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrychkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/29 20:44:47 by mrychkov          #+#    #+#             */
-/*   Updated: 2017/04/29 20:45:13 by mrychkov         ###   ########.fr       */
+/*   Created: 2017/04/29 18:43:26 by mrychkov          #+#    #+#             */
+/*   Updated: 2017/04/29 18:46:09 by mrychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_itoa(int n)
+int		ft_strcmp(const char *s1, const char *s2)
 {
-	int		i;
-	char	 	str[11];
-	int		neg;
+	unsigned char	*cs1;
+	unsigned char	*cs2;
 
-	i = 0;
-	ft_bzero(str, 10);
-	neg = 0;
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	if (n < 0)
+	cs1 = (unsigned char *)s1;
+	cs2 = (unsigned char *)s2;
+	while (*cs1 && *cs2 && *cs1 == *cs2)
 	{
-		n = -n;
-		neg = 1;
+		cs1++;
+		cs2++;
 	}
-	while (n / 10)
-	{
-		str[i++] = n % 10 + '0';
-		n = n / 10;
-	}
-	str[i++] = n + '0';
-	if (neg == 1)
-		str[i++] = '-';
-	str[i] = '\0';
-	return (ft_strdup(ft_strrev(str)));
+	if (*cs1 != *cs2)
+		return (*cs1 - *cs2);
+	return (0);
 }

@@ -1,41 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrychkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/29 20:44:47 by mrychkov          #+#    #+#             */
-/*   Updated: 2017/04/29 20:45:13 by mrychkov         ###   ########.fr       */
+/*   Created: 2017/04/29 18:58:46 by mrychkov          #+#    #+#             */
+/*   Updated: 2017/04/29 19:00:20 by mrychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 {
-	int		i;
-	char	 	str[11];
-	int		neg;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
-	ft_bzero(str, 10);
-	neg = 0;
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	if (n < 0)
+	if (ft_strlen(s2) == 0)
+		return ((char*)s1);
+	if (ft_strlen(s1) == 0 || len == 0)
+		return (NULL);
+	len = len - 1;
+	while (s1[i] && (i <= len))
 	{
-		n = -n;
-		neg = 1;
+		j = 0;
+		while (s1[i + j] == s2[j])
+		{
+			if ((i + j == len + 1) && (j + 1 != '\0'))
+				return (NULL);
+			j++;
+			if (s2[j] == '\0')
+				return ((char*)s1 + i);
+		}
+		i++;
 	}
-	while (n / 10)
-	{
-		str[i++] = n % 10 + '0';
-		n = n / 10;
-	}
-	str[i++] = n + '0';
-	if (neg == 1)
-		str[i++] = '-';
-	str[i] = '\0';
-	return (ft_strdup(ft_strrev(str)));
+	return (0);
 }
