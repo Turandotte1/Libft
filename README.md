@@ -57,6 +57,7 @@
   • ft_putendl_fd (write a string with '\n' in the end to a fd)<br />
   • ft_putnbr_fd (write an int to a fd)<br />
   • get_next_line (read the content line by line, multiple fd managment)<br />
+  • ft_malloc_error (print line and file of an memory allocation)<br />
   
 3. List manipulation functions:<br />
   • ft_lstnew (allocate new list node)<br />
