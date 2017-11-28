@@ -1,4 +1,4 @@
-- Standard libc functions:  <br />
+1. Standard libc functions:  <br />
   • memset<br />
   • bzero<br />
   • memcpy<br />
@@ -29,7 +29,7 @@
   • tolower<br />
   • printf<br />
 
-- Other useful C functions:<br />
+2. Other useful C functions:<br />
   • ft_memalloc (malloc part of a memory and initializet it at 0)<br />
   • ft_memdel (free allocated memory and put a pointer to NULL)<br />
   • ft_strnew (malloc a string and fills it with '\0')<br />
@@ -56,7 +56,7 @@
   • ft_putnbr_fd (write an int to a fd)<br />
   • get_next_line (read the content line by line, multiple fd managment)<br />
   
- - List manipulation functions:<br />
+3. List manipulation functions:<br />
   • ft_lstnew (allocate new list node)<br />
   • ft_lstdelone (free list node)<br />
   • ft_lstdel (free all the nodes)<br />
