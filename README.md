@@ -1,7 +1,3 @@
-# libft
-
-My C library:
-
 - Standard libc functions:  <br />
   • memset<br />
   • bzero<br />
