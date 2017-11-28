@@ -89,6 +89,7 @@ ft_int_size.c \
 ft_strrev.c \
 ft_wclen.c \
 ft_wstrlen.c \
+ft_malloc_error.c \
 get_next_line.c \
 ft_printf.c \
 ft_printf_itoa.c \
