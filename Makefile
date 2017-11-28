@@ -6,7 +6,7 @@
 #    By: mrychkov <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/04/18 20:14:44 by mrychkov          #+#    #+#              #
-#    Updated: 2017/05/02 19:16:05 by mrychkov         ###   ########.fr        #
+#    Updated: 2017/11/28 02:23:06 by mrychkov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,7 @@ ft_isdigit.c \
 ft_isprint.c \
 ft_toupper.c \
 ft_tolower.c \
+ft_tolower_str.c \
 ft_memccpy.c \
 ft_memcpy.c \
 ft_memchr.c \
@@ -85,7 +86,21 @@ ft_lstmap.c \
 ft_lstnew.c \
 ft_isspace.c \
 ft_int_size.c \
-ft_strrev.c
+ft_strrev.c \
+ft_wclen.c \
+ft_wstrlen.c \
+get_next_line.c \
+ft_printf.c \
+ft_printf_itoa.c \
+ft_printf_args_parsing.c \
+ft_printf_init.c \
+ft_printf_num_conv.c \
+ft_printf_print.c \
+ft_printf_print_utils.c \
+ft_printf_putbuffer.c \
+ft_printf_recast.c \
+ft_printf_spec_conv.c \
+ft_printf_str_conv.c \
 
 # dir
 
@@ -100,27 +115,26 @@ OBJ_PATH = $(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
 
 # rules
 
-.PHONY: all clean fclean re
+.PHONY: all clean norme fclean re
 
 all: $(NAME) $(OBJ_PATH)
 
 $(NAME): $(OBJ_PATH)
-	ar rc $@ $(OBJ_PATH)
-	ranlib $@
+	@ar rc $@ $(OBJ_PATH)
+	@ranlib $@
 	@echo "$(OK_COLOR)	--- Libft successfully compiled! ---	$(NO_COLOR)"
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c	
 	@mkdir -p $(OBJ_DIR)
-	$(CC) $(CFLAGS) -I $(INC_DIR) -o $@ -c $<
+	@$(CC) $(CFLAGS) -I $(INC_DIR) -o $@ -c $<
 
 norme:
 	@norminette $(SRC_PATH) $(INC_DIR)
+
 clean:
-	@echo "$(WAIT_COLOR)	--- .o deletion.... ---		$(NO_COLOR)"
 	rm -rf $(OBJ_DIR)
 	
 fclean: clean
-	@echo "$(WAIT_COLOR)	--- Libft deletion.... ---	$(NO_COLOR)"
 	rm -rf $(NAME)
 
 re: fclean all
