@@ -13,12 +13,6 @@
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include <stdarg.h>
-# include <stdio.h>
-# include <unistd.h>
-# include <stdarg.h>
-# include <stdlib.h>
-# include <limits.h>
 # include "libft.h"
 
 # define NB_ARGS 16

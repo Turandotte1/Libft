@@ -18,7 +18,7 @@ t_reader		*ft_init(const int fd)
 
 	if (!(init = (t_reader *)malloc(sizeof(t_reader *))))
 		return (NULL);
-	init->buf = ft_strnew(BUFF_SIZE);
+	init->buf = ft_strnew(BUFF_LEN);
 	init->fd = fd;
 	return (init);
 }
@@ -72,7 +72,7 @@ size_t			ft_line(t_reader **reader, char **line)
 	while (!(end_of_line = ft_strchr((*reader)->buf, '\n')) && banana > 0)
 	{
 		ft_swap_swap(line, (*reader)->buf);
-		if ((banana = read((*reader)->fd, (*reader)->buf, BUFF_SIZE)) < 1
+		if ((banana = read((*reader)->fd, (*reader)->buf, BUFF_LEN)) < 1
 				&& !(**line))
 			return (banana);
 	}

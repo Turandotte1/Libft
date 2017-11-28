@@ -17,6 +17,10 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <string.h>
+# include <limits.h>
+# include <stdarg.h>
+# include "get_next_line.h"
+# include "printf.h"
 
 typedef struct		s_list
 {
@@ -65,6 +69,7 @@ int					ft_strequ(char const *s1, char const *s2);
 int					ft_strnequ(char const *s1, char const *s2, size_t n);
 int					ft_isspace(int c);
 int					ft_int_size(int n);
+int					ft_wclen(wchar_t wc);
 
 char				*ft_strcpy(char *dest, const char *src);
 char				*ft_strncpy(char *dest, const char *src, size_t len);
@@ -84,10 +89,12 @@ char				*ft_strtrim(char const *s);
 char				**ft_strsplit(char const *s, char c);
 char				*ft_itoa(int n);
 char				*ft_strrev(char *s);
+char				*ft_tolower_str(char *str);
 
 t_list				*ft_lstnew(void const *content, size_t content_size);
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 size_t				ft_strlen(const char *s);
 size_t				ft_strlcat(char *dest, const char *src, size_t size);
+size_t				ft_wstrlen(wchar_t *ws);
 #endif
