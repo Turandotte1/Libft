@@ -29,6 +29,19 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+typedef struct		s_elem
+{
+	void			*content;
+	struct s_elem	*prev;
+	struct s_elem	*next;
+}					t_elem;
+typedef struct		s_dbllist
+{
+	size_t			length;
+	struct s_elem	*head;
+	struct s_elem	*tail;
+}					t_dbllist;
+
 void				ft_putchar(char c);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putstr(char const *s);
