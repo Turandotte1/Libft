@@ -2,10 +2,10 @@ void			ft_doublelink_add(t_double *list, void *content, size_t cont_size)
 {
 	t_node		*new_elem;
 
-	new_elem = (t_elem *)malloc(sizeof(t_elem));
+	new_elem = (t_node *)malloc(sizeof(t_node));
 	if (new_elem == NULL)
 		return ;
-	ft_bzero(new_elem, sizeof(t_elem));
+	ft_bzero(new_elem, sizeof(t_node));
 	new_elem->content = (void *)malloc(cont_size);
 	if (new_elem->content == NULL)
 	{
@@ -31,9 +31,9 @@ void			ft_doublelink_add_head(t_double *list, void *content,
 {
 	t_node		*new_elem;
 
-	if ((new_elem = (t_elem *)malloc(sizeof(t_elem))) == NULL)
+	if ((new_elem = (t_node *)malloc(sizeof(t_node))) == NULL)
 		return ;
-	ft_bzero(new_elem, sizeof(t_elem));
+	ft_bzero(new_elem, sizeof(t_node));
 	new_elem->content = (void *)malloc(cont_size);
 	if (new_elem->content == NULL)
 	{
@@ -60,10 +60,10 @@ void			ft_doublelink_tail(t_double *list, void *content,
 {
 	t_node		*new_elem;
 
-	new_elem = (t_elem *)malloc(sizeof(t_elem));
+	new_elem = (t_node *)malloc(sizeof(node));
 	if (new_elem == NULL)
 		return ;
-	ft_bzero(new_elem, sizeof(t_elem));
+	ft_bzero(new_elem, sizeof(t_node));
 	new_elem->content = (void *)malloc(cont_size);
 	if (new_elem->content == NULL)
 	{
