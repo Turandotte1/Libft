@@ -1,7 +1,7 @@
-void	ft_doublelink_del(t_dbllist **list)
+void	ft_doublelink_del(t_double **list)
 {
-	t_elem	*tmp;
-	t_elem	*tmp_next;
+	t_node	*tmp;
+	t_node	*tmp_next;
 
 	tmp = (*list)->head;
 	while (tmp != NULL)
