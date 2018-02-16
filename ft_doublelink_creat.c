@@ -1,4 +1,4 @@
-t_dbllist		*ft_doublelink_creat(void)
+t_double		*ft_doublelink_creat(void)
 {
 	t_dbllist	*list;
 
