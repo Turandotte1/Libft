@@ -32,7 +32,7 @@
   * **ft_printf**
 
 ## Other useful C functions:
-| function's name | function's action |
+| **FUNCTION NAME** | **FUNCTION ACTION** |
 -----------|--------|
 |**ft_memalloc** | *malloc part of a memory and initializet it at 0* |
 |**ft_memdel** | *free allocated memory and put a pointer to NULL* |
@@ -62,7 +62,7 @@
 |**ft_malloc_error** |*print line and file of an memory allocation*|
   
 ## List manipulation functions:
-| function's name | function's action |
+| **FUNCTION NAME** | **FUNCTION ACTION** |
 -----------|--------|
 |**ft_lstnew** | *allocate new list node* |
 |**ft_lstdelone** | *free list node* |
