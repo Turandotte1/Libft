@@ -1,8 +1,8 @@
 t_double		*ft_doublelink_creat(void)
 {
-	t_dbllist	*list;
+	t_double	*list;
 
-	list = (t_dbllist *)malloc(sizeof(t_dbllist));
+	list = (t_double *)malloc(sizeof(t_double));
 	if (list == NULL)
 		return (NULL);
 	else
