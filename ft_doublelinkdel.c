@@ -1,7 +1,19 @@
-void	ft_doublelink_del(t_double **list)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_doublelinkdel.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mrychkov <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/02/16 17:06:04 by mrychkov          #+#    #+#             */
+/*   Updated: 2018/02/16 17:07:12 by mrychkov         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+void			ft_doublelink_del(t_double **list)
 {
-	t_node	*tmp;
-	t_node	*tmp_next;
+	t_node		*tmp;
+	t_node		*tmp_next;
 
 	tmp = (*list)->head;
 	while (tmp != NULL)

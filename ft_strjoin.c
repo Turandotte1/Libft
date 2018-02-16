@@ -6,17 +6,17 @@
 /*   By: mrychkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/29 20:40:59 by mrychkov          #+#    #+#             */
-/*   Updated: 2017/04/29 20:41:35 by mrychkov         ###   ########.fr       */
+/*   Updated: 2018/02/16 16:47:25 by mrychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char		*ft_strjoin(char const *s1, char const *s2)
 {
 	int		j;
 	int		k;
-	char		*ptr;
+	char	*ptr;
 
 	if (!s1 || !s2)
 		return (NULL);

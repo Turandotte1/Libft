@@ -6,7 +6,7 @@
 /*   By: mrychkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/19 18:20:35 by mrychkov          #+#    #+#             */
-/*   Updated: 2017/05/02 19:05:50 by mrychkov         ###   ########.fr       */
+/*   Updated: 2018/02/16 16:38:35 by mrychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,12 @@ void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 void				ft_malloc_error(int line, char *file);
-void				ft_doublelink_add(t_double *list, void *content, size_t cont_size);
-void				ft_doublelink_add_head(t_double *list, void *content, size_t cont_size);
-void				ft_doublelink_tail(t_double *list, void *content, size_t cont_size);
+void				ft_doublelink_add(t_double *list, void *content,
+					size_t cont_size);
+void				ft_doublelink_add_head(t_double *list, void *content,
+					size_t cont_size);
+void				ft_doublelink_tail(t_double *list, void *content,
+					size_t cont_size);
 void				ft_doublelink_del(t_double **list);
 
 int					ft_strcmp(const char *s1, const char *s2);
@@ -113,7 +116,6 @@ t_list				*ft_lstnew(void const *content, size_t content_size);
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 t_double			*ft_doublelink_creat(void);
-
 
 size_t				ft_strlen(const char *s);
 size_t				ft_strlcat(char *dest, const char *src, size_t size);

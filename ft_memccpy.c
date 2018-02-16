@@ -6,17 +6,17 @@
 /*   By: mrychkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/24 12:19:35 by mrychkov          #+#    #+#             */
-/*   Updated: 2017/04/29 18:02:26 by mrychkov         ###   ########.fr       */
+/*   Updated: 2018/02/16 16:58:37 by mrychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
+void				*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
 	unsigned char	*cdest;
 	unsigned char	*csrc;
-	size_t		i;
+	size_t			i;
 
 	cdest = (unsigned char *)dest;
 	csrc = (unsigned char *)src;

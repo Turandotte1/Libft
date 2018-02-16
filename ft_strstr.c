@@ -6,7 +6,7 @@
 /*   By: mrychkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/29 19:04:25 by mrychkov          #+#    #+#             */
-/*   Updated: 2017/04/29 19:08:16 by mrychkov         ###   ########.fr       */
+/*   Updated: 2018/02/16 16:41:42 by mrychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strstr(const char *s1, const char *s2)
 	while (s1[i])
 	{
 		j = 0;
-		while (s1[i + j] == s2[j]) //marche pq j remis a 0
+		while (s1[i + j] == s2[j])
 		{
 			j++;
 			if (s2[j] == '\0')

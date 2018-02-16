@@ -6,14 +6,14 @@
 /*   By: mrychkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/02 18:27:51 by mrychkov          #+#    #+#             */
-/*   Updated: 2017/05/02 18:42:38 by mrychkov         ###   ########.fr       */
+/*   Updated: 2018/02/16 17:03:07 by mrychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, t_list * (*f)(t_list *elem))
-{	
+t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+{
 	t_list	*temp;
 	t_list	*list;
 	t_list	*start;

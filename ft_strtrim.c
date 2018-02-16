@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:       :+:    :+:  */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrychkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/29 20:42:17 by mrychkov          #+#    #+#             */
-/*   Updated: 2017/04/29 20:43:02 by mrychkov         ###   ########.fr       */
+/*   Created: 2018/02/16 16:40:04 by mrychkov          #+#    #+#             */
+/*   Updated: 2018/02/16 16:40:50 by mrychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s)
+char				*ft_strtrim(char const *s)
 {
 	unsigned int	i;
-	int		start;
-	int		end;
+	int				start;
+	int				end;
 
 	i = 0;
 	start = 0;

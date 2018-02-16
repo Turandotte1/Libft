@@ -6,14 +6,14 @@
 /*   By: mrychkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/15 14:23:16 by mrychkov          #+#    #+#             */
-/*   Updated: 2017/04/29 18:46:59 by mrychkov         ###   ########.fr       */
+/*   Updated: 2018/02/16 16:51:49 by mrychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, const char *src)
+char		*ft_strcpy(char *dest, const char *src)
 {
-	int i;
-	
+	int		i;
+
 	i = 0;
 	while (src[i])
 	{

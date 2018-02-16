@@ -1,4 +1,17 @@
-void			ft_doublelink_add(t_double *list, void *content, size_t cont_size)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_doublelink.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mrychkov <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/02/16 16:52:23 by mrychkov          #+#    #+#             */
+/*   Updated: 2018/02/16 16:53:28 by mrychkov         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+void			ft_doublelink_add(t_double *list, void *content,
+								size_t cont_size)
 {
 	t_node		*new_elem;
 

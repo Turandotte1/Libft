@@ -6,7 +6,7 @@
 /*   By: mrychkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/29 20:43:49 by mrychkov          #+#    #+#             */
-/*   Updated: 2017/04/29 20:44:17 by mrychkov         ###   ########.fr       */
+/*   Updated: 2018/02/16 16:39:19 by mrychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static char		**ft_split(char **tab, char c, char const *s)
 	size_t	j;
 
 	i = 0;
-	word= 0;
+	word = 0;
 	while (s[i])
 	{
 		j = 0;
