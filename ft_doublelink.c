@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void			ft_doublelink_add(t_double *list, void *content,
 								size_t cont_size)
 {
@@ -73,7 +75,7 @@ void			ft_doublelink_tail(t_double *list, void *content,
 {
 	t_node		*new_elem;
 
-	new_elem = (t_node *)malloc(sizeof(node));
+	new_elem = (t_node *)malloc(sizeof(t_node));
 	if (new_elem == NULL)
 		return ;
 	ft_bzero(new_elem, sizeof(t_node));

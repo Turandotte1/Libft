@@ -26,7 +26,11 @@ CFLAGS = -Wall -Wextra -Werror
 # files
 
 SRC = ft_atoi.c \
+ft_atoi_max.c \
 ft_bzero.c \
+ft_doublelink.c \
+ft_doublelink_creat.c \
+ft_doublelinkdel.c \
 ft_isalnum.c \
 ft_isalpha.c \
 ft_isascii.c \

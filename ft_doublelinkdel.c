@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void			ft_doublelink_del(t_double **list)
 {
 	t_node		*tmp;
