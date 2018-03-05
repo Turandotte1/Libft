@@ -121,4 +121,6 @@ t_double			*ft_doublelink_creat(void);
 size_t				ft_strlen(const char *s);
 size_t				ft_strlcat(char *dest, const char *src, size_t size);
 size_t				ft_wstrlen(wchar_t *ws);
+
+intmax_t			ft_atoi_max(const char *str);
 #endif
