@@ -48,7 +48,7 @@ all: $(NAME) $(OBJ_PATH)
 $(NAME): $(OBJ_PATH)
 	@ar rc $@ $(OBJ_PATH)
 	@ranlib $@
-	@echo "$(CLEAN_COLOR)Compiliation de libft: $(OK_COLOR) OK $(OK_COLOR)"
+	@echo "$(CLEAN_COLOR)Compiliation de libft: $(OK_COLOR)OK $(OK_COLOR)"
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c	
 	@mkdir -p $(OBJ_DIR)
