@@ -12,11 +12,12 @@
 
 #include "libft.h"
 
-void	ft_strdel(char **tab)
+int		ft_strdel(char **tab)
 {
 	if (tab)
 	{
 		ft_memdel((void **)tab);
 		*tab = NULL;
 	}
+	return (1);
 }

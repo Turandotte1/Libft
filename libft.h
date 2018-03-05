@@ -50,7 +50,6 @@ void				ft_putstr_fd(char const *s, int fd);
 void				ft_putnbr(int n);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_bzero(void *s, size_t n);
-void				ft_strdel(char **as);
 void				ft_strclr(char *s);
 void				ft_putendl(char const *s);
 void				ft_putendl_fd(char const *s, int fd);
@@ -92,6 +91,7 @@ int					ft_strnequ(char const *s1, char const *s2, size_t n);
 int					ft_isspace(int c);
 int					ft_int_size(int n);
 int					ft_wclen(wchar_t wc);
+int					ft_strdel(char **as);
 
 char				*ft_strcpy(char *dest, const char *src);
 char				*ft_strncpy(char *dest, const char *src, size_t len);

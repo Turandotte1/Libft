@@ -6,14 +6,14 @@
 /*   By: mrychkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/19 16:17:11 by mrychkov          #+#    #+#             */
-/*   Updated: 2017/06/19 16:29:45 by mrychkov         ###   ########.fr       */
+/*   Updated: 2018/03/05 03:35:34 by mrychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# define BUFF_LEN 42
+# define BUFF_LEN 1
 
 # include "libft.h"
 
