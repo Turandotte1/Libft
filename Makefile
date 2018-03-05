@@ -6,7 +6,7 @@
 #    By: mrychkov <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/04/18 20:14:44 by mrychkov          #+#    #+#              #
-#    Updated: 2017/11/28 02:24:03 by mrychkov         ###   ########.fr        #
+#    Updated: 2018/03/05 01:56:08 by mrychkov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,7 @@ all: $(NAME) $(OBJ_PATH)
 $(NAME): $(OBJ_PATH)
 	@ar rc $@ $(OBJ_PATH)
 	@ranlib $@
-	@echo "$(CLEAN_COLOR) Compiliation $(NAME): $(OK_COLOR) OK $(OK_COLOR)"
+	@echo "$(CLEAN_COLOR)Compiliation de libft: $(OK_COLOR) OK $(OK_COLOR)"
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c	
 	@mkdir -p $(OBJ_DIR)
