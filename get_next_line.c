@@ -16,7 +16,7 @@ t_reader		*ft_init(const int fd)
 {
 	t_reader	*init;
 
-	if (!(init = (t_reader *)malloc(sizeof(t_reader *))))
+	if (!(init = (t_reader *)malloc(sizeof(t_reader))))
 		return (NULL);
 	init->buf = ft_strnew(BUFF_LEN);
 	init->fd = fd;
@@ -39,7 +39,7 @@ t_reader		*ft_wtf_buffer(t_list **list, const int fd)
 	}
 	if (!(reader = ft_init(fd)))
 		return (NULL);
-	current = ft_lstnew(reader, sizeof(reader));
+	current = ft_lstnew(reader, sizeof(t_reader));
 	free(reader);
 	reader = NULL;
 	((t_reader *)current->content)->fd = fd;
