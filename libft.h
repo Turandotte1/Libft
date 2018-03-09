@@ -6,7 +6,7 @@
 /*   By: mrychkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/19 18:20:35 by mrychkov          #+#    #+#             */
-/*   Updated: 2018/02/16 16:38:35 by mrychkov         ###   ########.fr       */
+/*   Updated: 2018/03/09 01:02:59 by mrychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,7 @@ int					ft_isspace(int c);
 int					ft_int_size(int n);
 int					ft_wclen(wchar_t wc);
 int					ft_strdel(char **as);
+int					ft_full_char(char *str, char c);
 
 char				*ft_strcpy(char *dest, const char *src);
 char				*ft_strncpy(char *dest, const char *src, size_t len);

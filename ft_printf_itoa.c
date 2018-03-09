@@ -72,7 +72,7 @@ char					*ft_itoa_neg(intmax_t nb)
 	if (nb <= 0)
 		temp *= -1;
 	size = get_size_neg(nb) - 1;
-	if (!(res = malloc(sizeof(char) * size + 1)))
+	if (!(res = malloc(sizeof(char) * size + 2)))
 		return (NULL);
 	res[size + 1] = '\0';
 	if (nb == LLONG_MAX)

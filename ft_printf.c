@@ -6,7 +6,7 @@
 /*   By: mrychkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/24 13:19:36 by mrychkov          #+#    #+#             */
-/*   Updated: 2017/11/05 18:53:38 by mrychkov         ###   ########.fr       */
+/*   Updated: 2018/03/09 05:23:34 by mrychkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,7 @@ int				start_parsing(const char *format, t_printf *flags, va_list ap)
 
 int				ft_printf(const char *format, ...)
 {
+	int			ret;
 	t_printf	*flags;
 	va_list		ap;
 
@@ -116,6 +117,7 @@ int				ft_printf(const char *format, ...)
 	if (write(1, flags->buffer, flags->buff_index) == -1)
 		flags->buff_index = -1;
 	va_end(ap);
+	ret = flags->buff_index;
 	free(flags);
-	return (flags->buff_index);
+	return (ret);
 }
