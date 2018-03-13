@@ -6,7 +6,7 @@
 #    By: mrychkov <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/04/18 20:14:44 by mrychkov          #+#    #+#              #
-#    Updated: 2018/03/09 03:08:23 by mrychkov         ###   ########.fr        #
+#    Updated: 2018/03/13 12:58:25 by mrychkov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,7 @@ ft_printf_str_conv.c
 SRC_DIR = ./
 OBJ_DIR = ./objs
 INC_DIR = ./
+CFLAGS = -Wall -Wextra -Werror
 
 SRC_PATH = $(addprefix $(SRC_DIR)/,$(SRC))
 OBJ_PATH = $(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
